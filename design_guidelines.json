@@ -1,0 +1,191 @@
+{
+  "app_name": "NeuroKid",
+  "personality": "1 iOS-Native Clean",
+  "personality_one_liner": "A calm, non-intrusive parental dashboard for child digital wellbeing, blending soft botanical tones with crisp iOS-native readability.",
+  "color": {
+    "surface": "#FFFFFF",
+    "onSurface": "#212529",
+    "surfaceSecondary": "#F8F9FA",
+    "onSurfaceSecondary": "#212529",
+    "surfaceTertiary": "#FFFFFF",
+    "onSurfaceTertiary": "#212529",
+    "surfaceInverse": "#212529",
+    "onSurfaceInverse": "#FFFFFF",
+    "brand": "#145C68",
+    "brandPrimary": "#145C68",
+    "onBrandPrimary": "#FFFFFF",
+    "brandSecondary": "#2A9D8F",
+    "onBrandSecondary": "#FFFFFF",
+    "brandTertiary": "#48A9A6",
+    "onBrandTertiary": "#FFFFFF",
+    "success": "#2A9D8F",
+    "onSuccess": "#FFFFFF",
+    "warning": "#E9C46A",
+    "onWarning": "#212529",
+    "error": "#E76F51",
+    "onError": "#FFFFFF",
+    "info": "#1B7A82",
+    "onInfo": "#FFFFFF",
+    "border": "#E5E7EB",
+    "borderStrong": "#D1D5DB",
+    "divider": "#F3F4F6",
+    "accentModerate": "#E9C46A",
+    "onAccentModerate": "#212529",
+    "accentCritical": "#E76F51",
+    "onAccentCritical": "#FFFFFF",
+    "textMuted": "#6C757D"
+  },
+  "typography": {
+    "displayFontFamily": "Plus Jakarta Sans",
+    "textFontFamily": "Plus Jakarta Sans",
+    "scale": {
+      "sm": 12,
+      "base": 14,
+      "lg": 16,
+      "xl": 20,
+      "2xl": 32
+    }
+  },
+  "spacing": {
+    "rule": "Generous vertical breathing room for a calm, uncluttered experience. Padding is carefully maintained on all containers to ensure a soft and airy feel.",
+    "xs": 4,
+    "sm": 8,
+    "md": 12,
+    "lg": 16,
+    "xl": 24,
+    "2xl": 32,
+    "3xl": 48
+  },
+  "radius_tokens": {
+    "sm": 12,
+    "md": 18,
+    "lg": 24,
+    "pill": 999
+  },
+  "shadow_tier": "1",
+  "custom_shadow": "0px 8px 24px rgba(20,92,104,0.06)",
+  "navigation": "bottom_tabs",
+  "icon_set": "Feather",
+  "glassmorphism": {
+    "enabled": "true",
+    "do's": [
+      "Use subtle glass effects on sticky tab bars and full-screen overlay backgrounds to maintain a soft, premium aesthetic."
+    ],
+    "dont's": [
+      "Avoid heavy blur on content cards or text backgrounds."
+    ]
+  },
+  "platform_libraries": {
+    "glass": {
+      "ios": "expo-glass-effect",
+      "android": "expo-blur",
+      "low_end_android_fallback": "solid surfaceSecondary"
+    },
+    "image": "expo-image",
+    "blur": "expo-blur",
+    "bottom_sheet": "@gorhom/bottom-sheet",
+    "animation": "react-native-reanimated",
+    "gesture": "react-native-gesture-handler"
+  },
+  "haptics": {
+    "events": {
+      "tab_press": "light",
+      "button_press": "light",
+      "toggle_switch": "light",
+      "soft_landing_trigger": "success"
+    }
+  },
+  "screens": [
+    {
+      "name": "Dashboard Principal",
+      "purpose": "A calm overview showing current active status, daily screen time, and sensory load index.",
+      "states": {
+        "loading": "Skeleton cards with subtle shimmer on the dashboard grid.",
+        "empty": "N/A - the dashboard always shows some data or default baseline metrics.",
+        "error": "Soft retry prompt card below the ambient shield badge."
+      },
+      "layout": "Header with 'Quick-Child' pill left and 'Shield Active' breathing badge right. Main column features: 1. A soft banner showing 'Protected' ambient state. 2. A circular/bar chart card for 'Daily Screen Time'. 3. A smooth wave chart card for 'Sensory Load Index'. 4. A 'Quick Actions' horizontal row at the bottom."
+    },
+    {
+      "name": "Alerts & Gentle Interventions",
+      "purpose": "A non-alarmist feed grouping sensory spikes and soft interventions into a digestible daily digest.",
+      "states": {
+        "loading": "Spinner centered.",
+        "empty": "Illustration of a peaceful plant with 'All is calm today. No interventions needed.'",
+        "error": "Gentle error message with a 'Refresh' button."
+      },
+      "layout": "Top sticky header with a 'Clear All' button. Below, a scrollable list grouped by 'TODAY'. Each item is a card containing a status pill ('Auto-Interruption' in Soft Terracotta or 'Attention Transition' in Butter Gold), a short description, and an action button."
+    },
+    {
+      "name": "AI Explicativo Cards",
+      "purpose": "Explain the 'Why' behind AI-approved or blocked content focusing on cognitive stimulus.",
+      "states": {
+        "loading": "Image placeholder pulsing.",
+        "empty": "N/A - detail view.",
+        "error": "Failed to load details. Tap to retry."
+      },
+      "layout": "A detailed view showing a video thumbnail at the top. Below the image: title, duration, pacing stats. Following that, a horizontally scrollable chip row of 'Cognitive Stimulus Verified' badges, and a readable 'Why AI Approved This' explanation paragraph."
+    },
+    {
+      "name": "Slow Content Library",
+      "purpose": "A curated library of age-appropriate, low-stimulus content.",
+      "states": {
+        "loading": "Grid of skeleton cards.",
+        "empty": "Illustration of an open book with 'No content found for this filter.'",
+        "error": "Soft error message."
+      },
+      "layout": "A sticky horizontal chip row for age filtering at the top. Below, a 2-column or full-width vertical list of content cards (e.g., 'Forest Tales', 'Little Woodworker'). Each card displays an image, cuts/minute metric, audio notes, and an '[+ Add to Allowed List]' button."
+    },
+    {
+      "name": "Weekly Cognitive Health Summary",
+      "purpose": "An aggregate weekly report highlighting balanced cognitive behavior and offline activities.",
+      "states": {
+        "loading": "Spinner centered.",
+        "empty": "Not enough data collected yet. Check back on Sunday.",
+        "error": "Couldn't fetch the weekly summary."
+      },
+      "layout": "A scrollable view featuring large metric typography. Sections include 'Total Screen Hours', 'Sensory Overload Prevented' (spikes count), and 'Cognitive Balance Score'. Concludes with a list of 'Recommended Offline Activities' and a prominent button to 'Schedule Offline Reminder'."
+    },
+    {
+      "name": "Soft Landing Overlay (12s)",
+      "purpose": "A demoable, full-screen child interruption experience featuring a breathing transition to lower sensory load.",
+      "states": {
+        "loading": "N/A",
+        "empty": "N/A",
+        "error": "N/A"
+      },
+      "layout": "A full-screen, translucent view with an ambient breathing animation (4s cycle pulse) at the center. Saturated colors gently cool down over 12 seconds, inviting a pause before transitioning to the next screen."
+    },
+    {
+      "name": "Onboarding & Auth",
+      "purpose": "Introduce the parent to the Cognitive Shield concepts and handle JWT authentication.",
+      "states": {
+        "loading": "Button shows a spinner.",
+        "empty": "N/A",
+        "error": "Inline text message for login failure."
+      },
+      "layout": "3-step full-screen swipeable 'Cognitive Shield' tour (Filter, Vault, Guard), ending with a clean email/password login/signup form anchored by a primary 'Teal Nature' CTA."
+    }
+  ],
+  "images": {
+    "soft_landing_bg": {
+      "url": "https://images.pexels.com/photos/6951647/pexels-photo-6951647.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Mother and child practicing yoga poses calmly"
+    },
+    "content_forest_tales": {
+      "url": "https://images.unsplash.com/photo-1648824156751-b994ece57a10?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODh8MHwxfHNlYXJjaHwxfHxmb3Jlc3QlMjB0YWxlcyUyMGlsbHVzdHJhdGlvbnxlbnwwfHx8fDE3ODcyNzQ3ODF8MA&ixlib=rb-4.1.0&q=85",
+      "alt": "Forest Tales Illustration"
+    },
+    "content_woodworker": {
+      "url": "https://images.pexels.com/photos/32795058/pexels-photo-32795058.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Wooden toys crafting child"
+    }
+  },
+  "instructions_to_main_agent": [
+    "Strictly adhere to the exact color tokens, typography scale, and layout descriptions provided. Do not invent new colors, especially avoiding generic blues/purples.",
+    "Implement the custom shadow specification `0px 8px 24px rgba(20,92,104,0.06)` for all cards to create the required soft elevation.",
+    "Ensure the 'Soft Landing' overlay utilizes a smooth 350ms ease-in-out transition and features a 4s breathing pulse animation without any alarming or sudden visual changes.",
+    "Apply 18px radii for cards, 12px for buttons, and 999px for pills/badges.",
+    "For the Parent Dashboard, ensure the 'Quick-Child' pill and 'Shield Active' status remain anchored at the top for immediate context switching without deep menu navigation."
+  ]
+}
