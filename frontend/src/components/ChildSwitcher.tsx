@@ -1,4 +1,5 @@
 import Feather from "@react-native-vector-icons/feather";
+import { useRouter } from "expo-router";
 import { Pressable, ScrollView, StyleSheet, View } from "react-native";
 
 import { Txt } from "@/src/components/Base";
@@ -15,6 +16,7 @@ export function ChildSwitcher({
   activeId?: string | null;
   onSelect: (id: string) => void;
 }) {
+  const router = useRouter();
   return (
     <ScrollView
       horizontal
@@ -49,6 +51,16 @@ export function ChildSwitcher({
           </Pressable>
         );
       })}
+      <Pressable
+        testID="add-child-pill"
+        onPress={() => router.push("/add-child")}
+        style={[styles.chip, { backgroundColor: colors.surfaceSecondary, borderColor: colors.border }]}
+      >
+        <Feather name="plus" size={14} color={colors.brandPrimary} />
+        <Txt variant="caption" color={colors.brandPrimary}>
+          Nova criança
+        </Txt>
+      </Pressable>
     </ScrollView>
   );
 }

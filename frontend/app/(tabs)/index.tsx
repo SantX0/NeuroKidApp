@@ -220,7 +220,7 @@ export default function DashboardScreen() {
               <View style={styles.divider} />
               <Stat label="Alto" value={`${data?.sensory.high_pct ?? 0}%`} color={colors.accentCritical} />
             </View>
-            <View style={{ marginTop: spacing.lg, overflow: "hidden" }}>
+            <View style={{ marginTop: spacing.lg, overflow: "hidden", paddingBottom: spacing.sm }}>
               <SensoryWave
                 testID="sensory-wave-chart"
                 points={(data?.sensory.wave ?? []).map((p) => p.load)}

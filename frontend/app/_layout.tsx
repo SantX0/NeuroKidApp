@@ -57,6 +57,7 @@ export default function RootLayout() {
                 }}
               >
                 <Stack.Screen name="soft-landing" options={{ animation: "fade" }} />
+                <Stack.Screen name="add-child" options={{ presentation: "modal" }} />
               </Stack>
             </ToastProvider>
           </AuthProvider>
