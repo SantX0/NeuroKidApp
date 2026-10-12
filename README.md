@@ -185,7 +185,7 @@ cp frontend/.env.example frontend/.env
 ---
 
 ## Como rodar
-
+Requisito: o backend precisa do Python 3.11. Confira a versão com python --version antes de instalar as dependências.
 ```bash
 # Backend
 cd backend
